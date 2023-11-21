@@ -2,12 +2,13 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import { FlashList } from '@shopify/flash-list';
 import FastImage from 'react-native-fast-image';
-import { ActivityIndicator, MD2Colors } from 'react-native-paper';
 
 import { useAppTheme } from '~/theme/theme';
-import makeStyles from './styles';
 import { useNFTs } from '~/hooks/useQuery';
+import Loader from '~/components/Loader';
+import makeStyles from './styles';
 
+// TODO: Make the types for Item
 const ListItem = ({ item }: any) => {
   const theme = useAppTheme();
   const styles = makeStyles(theme);
@@ -32,16 +33,12 @@ const Home = () => {
     useNFTs();
 
   if (isLoading) {
-    return (
-      <View style={styles.loader}>
-        <ActivityIndicator animating={true} color={MD2Colors.red800} />
-      </View>
-    );
+    return <Loader />;
   }
 
   return (
     <View style={styles.container}>
-      <Text style={styles.heading}>List ot NFTs</Text>
+      <Text style={styles.heading}>All NFTs</Text>
       <View style={styles.listContainer}>
         <FlashList
           data={data?.pages.map(page => page?.items).flat()}
@@ -51,6 +48,9 @@ const Home = () => {
             if (hasNextPage) {
               fetchNextPage();
             }
+          }}
+          ListFooterComponent={() => {
+            return <>{isFetchingNextPage && <Loader />}</>;
           }}
         />
       </View>
