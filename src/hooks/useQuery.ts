@@ -1,5 +1,5 @@
 import { CONTRACT_ADDRESS } from '@env';
-import { useInfiniteQuery, useQuery } from 'react-query';
+import { useInfiniteQuery } from 'react-query';
 import { api } from '~/config/api';
 import { PAGE_SIZE } from '~/constants/appConstant';
 
@@ -7,7 +7,6 @@ const useNFTs = () => {
   return useInfiniteQuery({
     queryKey: ['nfts'],
     queryFn: async pageNumber => {
-      console.log(pageNumber?.pageParam);
       const res = await api.get(
         `/eth-mainnet/nft/${CONTRACT_ADDRESS}/metadata/`,
         {
