@@ -5,7 +5,7 @@ export interface IUserSliceStore {
 }
 
 const initialState: IUserSliceStore = {
-  isDarkTheme: false,
+  isDarkTheme: true,
 };
 
 export const userSlice = createSlice({
