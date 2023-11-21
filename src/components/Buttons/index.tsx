@@ -1,7 +1,7 @@
 import React from 'react';
-import { Pressable, StyleSheet, Text } from 'react-native';
-import { AppTheme, useAppTheme } from '~/theme/theme';
-import { ViewStyle } from 'react-native';
+import { Pressable, Text, ViewStyle } from 'react-native';
+import { useAppTheme } from '~/theme/theme';
+import { makeStyles } from './styles';
 
 interface IButton {
   title: string;
@@ -19,21 +19,4 @@ const Button = ({ title, onPress, customStyles }: IButton) => {
     </Pressable>
   );
 };
-const makeStyles = (theme: AppTheme) =>
-  StyleSheet.create({
-    container: {
-      height: 50,
-      backgroundColor: theme.colors.primary,
-      width: '80%',
-      margin: 10,
-      borderRadius: 10,
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-    tittle: {
-      color: theme.colors.white,
-      fontWeight: '400',
-      fontSize: 15,
-    },
-  });
 export default Button;
