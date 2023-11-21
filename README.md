@@ -28,3 +28,38 @@ Following is the CURL example:
 **Note**
 
 Do not make another screen for DetailView when the user taps on the list item. ListView should be enough.
+
+### How to run locally
+
+#### Step 1: Clone the repo
+
+```bash
+git clone https://github.com/hrithik73/PushTask
+```
+
+#### Step 2: Install the dependencies by running
+
+```bash
+yarn
+cd ios && pod install && cd ..
+```
+
+#### Step 3: Rename .env.example to .env and add your variables
+
+```env
+API_URL=YOUR_API_URL
+TOKEN=YOUR_TOKEN
+CONTRACT_ADDRESS=YOUR_CONTRACT_ADDRESS
+```
+
+#### Step 4: Run the App
+
+```bash
+yarn android
+```
+
+OR
+
+```bash
+yarn ios
+```

@@ -8,6 +8,7 @@ import makeStyles from './styles';
 import { INftItem } from '~/types/nfts';
 import { useAppDispatch, useAppSelector } from '~/redux/store';
 import { bookmarkNTF } from '~/redux/slices/nfts';
+import images from '~/config/image';
 
 export const ListItem = (item: INftItem) => {
   const theme = useAppTheme();
@@ -17,7 +18,11 @@ export const ListItem = (item: INftItem) => {
 
   return (
     <View style={styles.listItemContainer}>
-      <FastImage source={{ uri: item?.image }} style={styles.listItemImage} />
+      <FastImage
+        source={{ uri: item?.image }}
+        style={styles.listItemImage}
+        defaultSource={images.no_image}
+      />
       <Text style={styles.nftName}>{item?.name}</Text>
       <Text style={styles.ownerAddress}>{item?.ownerId}</Text>
       <Pressable

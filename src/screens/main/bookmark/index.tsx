@@ -24,14 +24,6 @@ const Bookmark = () => {
           }}
           estimatedItemSize={300}
           onEndReachedThreshold={0.5}
-          // onEndReached={() => {
-          //   if (hasNextPage) {
-          //     fetchNextPage();
-          //   }
-          // }}
-          // ListFooterComponent={() => {
-          //   return <>{isFetchingNextPage && <Loader />}</>;
-          // }}
         />
       </View>
     </SafeAreaView>
