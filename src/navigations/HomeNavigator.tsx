@@ -12,6 +12,7 @@ const HomeNavigator = () => {
         component={Home}
         options={{
           headerTitle: '',
+          headerShown: false,
         }}
       />
     </HomeStack.Navigator>

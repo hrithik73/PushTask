@@ -3,6 +3,7 @@ import { combineReducers } from '@reduxjs/toolkit';
 import { persistReducer } from 'redux-persist';
 
 import user from './slices/user';
+import nfts from './slices/nfts';
 
 const persistConfig = {
   key: 'root',
@@ -12,6 +13,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   user,
+  nfts: nfts,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

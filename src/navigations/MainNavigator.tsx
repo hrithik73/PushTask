@@ -5,7 +5,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { BOTTOM_TAB_ICON_SIZE } from '~/constants/appConstant';
 import { RootStackType } from '~/types/navigation';
 import HomeNavigator from './HomeNavigator';
-import { Setting } from './routes';
+import { Bookmark } from './routes';
 
 const Tab = createBottomTabNavigator<RootStackType>();
 
@@ -32,9 +32,10 @@ const TabNavigator = () => {
         }}
       />
       <Tab.Screen
-        name={'Saved'}
-        component={Setting}
+        name={'Boookmark'}
+        component={Bookmark}
         options={{
+          headerShown: false,
           tabBarIcon: ({ focused, color }) => (
             <TabIcon
               name={focused ? 'bookmark' : 'bookmark-outline'}
