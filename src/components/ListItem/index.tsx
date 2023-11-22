@@ -19,7 +19,7 @@ export const ListItem = (item: INftItem) => {
   return (
     <View style={styles.listItemContainer}>
       <FastImage
-        source={{ uri: item?.image }}
+        source={item?.image ? { uri: item?.image } : images.no_image}
         style={styles.listItemImage}
         defaultSource={images.no_image}
       />
