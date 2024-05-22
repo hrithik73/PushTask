@@ -2,7 +2,7 @@
 
 ## DEMO
 
-![](./docs/demo.mov)
+![](https://github.com/hrithik73/PushTask/blob/main/docs/demo.mov)
 
 **Description:**
 
