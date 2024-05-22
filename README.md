@@ -1,5 +1,9 @@
 # Push Protocol HIRING CHALLENGE
 
+## DEMO
+
+![](./docs/demo.mov)
+
 **Description:**
 
 The challenge is to build a mobile that displays and showcases the **DeGod NFT collections.** Read more about the DeGod NFTs **[HERE](https://opensea.io/collection/degods).**
